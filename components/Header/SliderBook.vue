@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Card from '../Card.vue';
+
 import Card2 from './Card2.vue';
 import Card3 from './Card3.vue';
 
@@ -27,9 +28,7 @@ import Card3 from './Card3.vue';
     <div class="slider">
       <div class="slides">
         <div class="slide-item"><Card/></div>
-        <div class="slide-item"><Card2 /></div>
-        <div class="slide-item"><Card3 /></div>
-        <div class="slide-item"><Card /></div>
+      
       </div>
     </div>
   </section>

@@ -3,71 +3,69 @@
 
 <template>
   <!-- RADIO -->
-  <input class="none" type="radio" name="slider" id="slide1" checked>
-  <input class="none" type="radio" name="slider" id="slide2">
-  <input class="none" type="radio" name="slider" id="slide3">
+  <input class="slider__radio slider__radio_hidden" type="radio" name="slider" id="slide1" checked>
+  <input class="slider__radio slider__radio_hidden" type="radio" name="slider" id="slide2">
+  <input class="slider__radio slider__radio_hidden" type="radio" name="slider" id="slide3">
 
   <!-- SECTION TITLE -->
-  <section class="section_tittle">
-    <p class="section-name name_news">Новости</p>
+  <section class="news-slider__title">
+    <p class="news-slider__name">Новости</p>
 
-    <div class="title-image-wrapper">
-      <img src="/public/img/twins.jpg" alt="button_slider">
+    <div class="news-slider__image-wrapper">
+      <img src="/public/img/twins.jpg" alt="button_slider" class="news-slider__image">
 
-      <!-- стрелки -->
-      <div class="arrows">
-        
-  <label for="slide2" class="next s1">›</label> <!-- Вперед: с 1 на 2 -->
-  <label for="slide3" class="prev s1">‹</label> <!-- Назад: с 1 на 3 -->
+      <!-- arrows -->
+      <div class="news-slider__arrows">
+        <label for="slide2" class="news-slider__arrow news-slider__arrow_next s1">›</label>
+        <label for="slide3" class="news-slider__arrow news-slider__arrow_prev s1">‹</label>
 
-  <label for="slide1" class="prev s2">‹</label> <!-- Назад: с 2 на 1 -->
-  <label for="slide3" class="next s2">›</label> <!-- Вперед: с 2 на 3 -->
+        <label for="slide1" class="news-slider__arrow news-slider__arrow_prev s2">‹</label>
+        <label for="slide3" class="news-slider__arrow news-slider__arrow_next s2">›</label>
 
- 
-  <label for="slide2" class="prev s3">‹</label> <!-- Назад: с 3 на 2 -->
-  <label for="slide1" class="next s3">›</label> <!-- Вперед: с 3 на 1 -->
+        <label for="slide2" class="news-slider__arrow news-slider__arrow_prev s3">‹</label>
+        <label for="slide1" class="news-slider__arrow news-slider__arrow_next s3">›</label>
       </div>
     </div>
   </section>
 
-  <!-- СЛАЙДЕР -->
-  <section class="news-section">
-    <div class="slider">
-      <div class="slides">
-        <div class="news_card">
-          <div class="image-wrapper">
-            <img class="main_book" src="/public/img/news1.png" alt="Новость 1"/>
+  <!-- SLIDER -->
+  <section class="news-slider">
+    <div class="news-slider__container">
+      <div class="news-slider__slides">
+        <div class="news-slider__card">
+          <div class="news-slider__image-container">
+            <img class="news-slider__book-image" src="/public/img/news1.png" alt="Новость 1"/>
           </div>
-          <span class="gray_text">16 июня 2020</span>
-          <h3 class="name_book">Бесплатный онлайн-семинар. Доктрина stare decisis: борьба за прецедент в России</h3>
-          <p class="new_gray_text">
+          <span class="news-slider__date">16 июня 2020</span>
+          <h3 class="news-slider__title-text">Бесплатный онлайн-семинар. Доктрина stare decisis: борьба за прецедент в России</h3>
+          <p class="news-slider__description">
             18 июня в «Клубе цивилистов» пройдет бесплатный онлайн-семинар по проблематике судебного прецедента. Мероприятие приурочено...
           </p>
-          <button class="button_red" type="button">Читать</button>
+          <button class="news-slider__button" type="button">Читать</button>
         </div>
 
-        <div class="news_card">
-          <div class="image-wrapper">
-            <img class="main_book" src="/public/img/news2.png" alt="Новость 2"/>
+        <div class="news-slider__card">
+          <div class="news-slider__image-container">
+            <img class="news-slider__book-image" src="/public/img/news2.png" alt="Новость 2"/>
           </div>
-          <span class="gray_text">16 июня 2020</span>
-          <h3 class="name_book">Бесплатный онлайн-семинар. Доктрина stare decisis: борьба за прецедент в России</h3>
-          <p class="new_gray_text">
+          <span class="news-slider__date">16 июня 2020</span>
+          <h3 class="news-slider__title-text">Бесплатный онлайн-семинар. Доктрина stare decisis: борьба за прецедент в России</h3>
+          <p class="news-slider__description">
             18 июня в «Клубе цивилистов» пройдет бесплатный онлайн-семинар по проблематике судебного прецедента. Мероприятие приуроч...
           </p>
-          <button class="button_red" type="button">Читать</button>
+          <button class="news-slider__button" type="button">Читать</button>
         </div>
 
-        <div class="news_card">
-          <div class="image-wrapper">
-            <img class="main_book" src="/public/img/news3.png" alt="Новость 3"/>
+        <div class="news-slider__card">
+          <div class="news-slider__image-container">
+            <img class="news-slider__book-image" src="/public/img/news3.png" alt="Новость 3"/>
           </div>
-          <span class="gray_text">16 июня 2020</span>
-          <h3 class="name_book">Бесплатный онлайн-семинар. Доктрина stare decisis: борьба за прецедент в России</h3>
-          <p class="new_gray_text">
+          <span class="news-slider__date">16 июня 2020</span>
+          <h3 class="news-slider__title-text">Бесплатный онлайн-семинар. Доктрина stare decisis: борьба за прецедент в России</h3>
+          <p class="news-slider__description">
             18 июня в «Клубе цивилистов» пройдет бесплатный онлайн-семинар по проблематике судебного прецедента. Мероприятие приурочено...
           </p>
-          <button class="button_red" type="button">Читать</button>
+          <button class="news-slider__button" type="button">Читать</button>
         </div>
       </div>
     </div>
@@ -75,18 +73,13 @@
 </template>
 
 <style>
-.none {
+/* скрытые радио-кнопки */
+.slider__radio_hidden {
   display: none;
 }
 
-.news-section {
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-}
-
-/* ===== SECTION TITLE ===== */
-.section_tittle {
+/* SECTION TITLE */
+.news-slider__title {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -98,29 +91,71 @@
   border-radius: 5px;
 }
 
-.title-image-wrapper {
+.news-slider__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1C294D;
+}
+
+.news-slider__image-wrapper {
   position: relative;
   display: inline-block;
 }
 
-.title-image-wrapper img {
+.news-slider__image {
   display: block;
 }
 
-/* ===== SLIDER ===== */
-.slider {
+/* arrows */
+.news-slider__arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+}
+
+.news-slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.9);
+  padding: 4px 10px;
+  display: none;
+  user-select: none;
+}
+
+.news-slider__arrow_prev { left: 5px; }
+.news-slider__arrow_next { right: 5px; }
+
+/* показываем стрелки по слайду */
+#slide1:checked ~ .news-slider__title .s1,
+#slide2:checked ~ .news-slider__title .s2,
+#slide3:checked ~ .news-slider__title .s3 {
+  display: block;
+}
+
+/* SLIDER */
+.news-slider {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.news-slider__container {
   width: 100%;
   max-width: 377px;
   overflow: hidden;
 }
 
-.slides {
+.news-slider__slides {
   display: flex;
   transition: transform 0.5s ease;
 }
 
-/* ===== NEWS CARD ===== */
-.news_card {
+/* NEWS CARD */
+.news-slider__card {
   min-width: 100%;
   flex: 0 0 100%;
   background: #fff;
@@ -134,8 +169,7 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* Ограничение по высоте и обрезка картинки */
-.image-wrapper {
+.news-slider__image-container {
   width: 100%;
   height: 150px;
   overflow: hidden;
@@ -143,7 +177,7 @@
   flex-shrink: 0;
 }
 
-.image-wrapper img.main_book {
+.news-slider__book-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -151,28 +185,28 @@
   border-radius: 8px;
 }
 
-
-.name_book {
+.news-slider__title-text {
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
   color: #1C294D;
   margin: 0;
-
 }
 
-.new_gray_text {
- 
+.news-slider__description {
   font-size: 12px;
   line-height: 20px;
   color: #4B5674;
   margin: 0;
-
   flex-grow: 1;
 }
 
-/* Кнопка с обводкой и hover */
-.button_red {
+.news-slider__date {
+  font-size: 12px;
+  color: #4B5674;
+}
+
+.news-slider__button {
   align-self: flex-start;
   padding: 8px 24px;
   font-weight: 400;
@@ -186,68 +220,43 @@
   user-select: none;
 }
 
-.button_red:hover {
+.news-slider__button:hover {
   background-color: #1C294D;
   color: #fff;
 }
 
-/* ===== TRANSFORM ===== */
-#slide1:checked ~ .news-section .slider .slides {
+/* TRANSFORM */
+#slide1:checked ~ .news-slider .news-slider__container .news-slider__slides {
   transform: translateX(0%);
 }
-
-#slide2:checked ~ .news-section .slider .slides {
+#slide2:checked ~ .news-slider .news-slider__container .news-slider__slides {
   transform: translateX(-100%);
 }
-
-#slide3:checked ~ .news-section .slider .slides {
+#slide3:checked ~ .news-slider .news-slider__container .news-slider__slides {
   transform: translateX(-200%);
 }
 
-/* ===== ARROWS ===== */
-.arrows label {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 16px;
-  cursor: pointer;
-  background: rgba(255,255,255,0.9);
-  padding: 4px 10px;
-  display: none;
-  user-select: none;
-}
-
-.prev { left: 5px; }
-.next { right: 5px; }
-
-/* показываем стрелки */
-#slide1:checked ~ .section_tittle .s1,
-#slide2:checked ~ .section_tittle .s2,
-#slide3:checked ~ .section_tittle .s3 {
-  display: block;
-}
-
-/* ===== DESKTOP ===== */
+/* DESKTOP */
 @media (min-width: 769px) {
-  .slider {
+  .news-slider__container {
     max-width: 100%;
     overflow: visible;
   }
 
-  .slides {
+  .news-slider__slides {
     transform: none !important;
   }
 
-  .news_card {
+  .news-slider__card {
     min-width: auto;
     flex: 1;
   }
 
-  .arrows {
+  .news-slider__arrows {
     display: none;
   }
 
-  .section_tittle {
+  .news-slider__title {
     max-width: 100%;
   }
 }

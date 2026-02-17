@@ -132,7 +132,9 @@ import FooterForm from '../FooterForm.vue';
   font-weight: 400;
   font-size: 16px;
 }
-
+#hidden_desctop{
+  display: none;
+}
 .footer_title {
   color: #1C294D;
   font-size: 16px;
@@ -154,7 +156,9 @@ import FooterForm from '../FooterForm.vue';
 .footer_list li {
   margin-bottom: 10px;
 }
-
+.full_line{
+  display: none;
+}
 .footer_list a {
   color: #282F36CC;
   text-decoration: none;
@@ -232,7 +236,12 @@ a {
 
 /* Адаптив */
 @media (max-width: 768px) {
-
+  #hidden_desctop{
+  display: block;
+}
+.full_line{
+  display:   block;
+}
 .none_n{
   display: none;
 }
