@@ -7,7 +7,14 @@ import Go from "./SliderBook.vue";
 import NewsCard from "./NewsCard.vue";
 
 
+import { onMounted } from 'vue';
 
+onMounted(() => {
+  const script = document.createElement('script');
+  script.src = '/script.js';  // Путь к вашему скрипту
+  script.type = 'text/javascript';
+  document.body.appendChild(script);  // Добавляем в body страницы
+});
 
 import RowSection from "./RowSection.vue";
 
@@ -19,7 +26,11 @@ import SliderBook from "./SliderBook.vue";
 	<main class="main">
 		<div class="main_container">
 			<!-- Баннер -->
+			 <div class="slider_banner"><!-- Баннер  слайд бар-->
+			 <div class="slider_banner">
+				
 			<div class="big_banner">
+				
 				<div class="banner">
 					<button class="banner_btn banner_btn--left">‹</button>
 					<div class="banner_content">
@@ -31,13 +42,46 @@ import SliderBook from "./SliderBook.vue";
 						/>
 					</div>
 					<button class="banner_btn banner_btn--right">›</button>
-					<img
-						class="banner_dots"
-						src="/public/img/Black.png"
-						alt=""
-					/>
+					
+					
 				</div>
-
+				<div class="banner" id="banner_color">
+					<button class="banner_btn banner_btn--left">‹</button>
+					<div class="banner_content">
+						<img src="/public/img/2=3.png" alt="2=3" />
+						<img
+							src="/public/img/на все книги.png"
+							alt=""
+							class="banner_text"
+						/>
+					</div>
+					<button class="banner_btn banner_btn--right">›</button>
+					
+					
+					<div class="swiper-scrollbar"></div>
+				</div>
+				<div class="banner " id="banner_colors">
+					<button class="banner_btn banner_btn--left">‹</button>
+					<div class="banner_content">
+						<img src="/public/img/2=3.png" alt="2=3" />
+						<img
+							src="/public/img/на все книги.png"
+							alt=""
+							class="banner_text"
+						/>
+					</div>
+					<button class="banner_btn banner_btn--right">›</button>
+				
+				
+				</div>
+				
+				
+			</div>
+			<div class="slider_dots">
+					 <span class="dot"></span>
+					 <span class="dot"></span>
+					 <span class="dot"></span>
+					</div></div>
 				<!-- Скидки -->
 				<div class="sale">
 					<div class="sale_rectangle purple_rectangl">
@@ -71,10 +115,12 @@ import SliderBook from "./SliderBook.vue";
 						/>
 						<img src="/public/img/man2.png" alt="" />
 					</div>
+					
 				</div>
+				
 			</div>
 
-			<!-- Большая карточка книги -->
+			<!-- Большая top: 325px; карточка книги -->
 			<div class="main_big_rectangle">
 				<div class="main_tittle">
 					<span class="text">Книга дня</span>
@@ -196,23 +242,44 @@ body {
 .gray_padding {
 	padding-top: 7px;
 }
-
+.banner{
+	overflow: hidden;
+}
+.big_banner{
+	
+	display: flex;
+}
 /* Баннер */
 .banner {
 	position: relative;
 	background-color: #ccff90;
-	width: 750px;
+	max-width: 750px;
 	height: 350px;
 	border-radius: 5px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	
+}
+.slider_banner{
+	overflow: hidden;
 }
 .banner_content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 10px;
+}
+#banner_colors{
+	background-color: aquamarine;
+}
+#banner_color{
+	background-color: cornflowerblue;
+}
+.banner_content img {
+  max-width: 100%; /* изображение не выйдет за границы контейнера */
+  height: auto;    /* сохраняем пропорции */
+  display: block;  /* убирает лишние отступы снизу */
 }
 .banner_btn {
 	position: absolute;
@@ -342,7 +409,10 @@ margin-top: 5px;
 	align-items: center;
 	gap: 5px;
 }
-
+.slider_banner {
+  overflow: hidden;
+  position: relative;   /* ВАЖНО */
+}
 /* Pink и Purple блоки */
 .sale {
 	display: flex;
@@ -418,12 +488,43 @@ margin-top: 5px;
 .form_blue{
 	margin-bottom: 30px;
 }
+.slider_dots {
+  position: absolute;
+  bottom: 15px;
+ 
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 5; /* чтобы не прятались */
+}
+
+
+.dot{
+	width: 30px;
+	height: 4px;
+	background-color: gray;
+	transition: 0.3s;
+}
+.dot.active {
+  background-color: #ffffff;
+  width: 45px;
+}
 /* Адаптив */
 @media (max-width: 740px) {
 	.main {
 		padding: 11px 10px;
 	}
-
+	.dot{
+	width: 20px;
+	height: 2px;
+	background-color: gray;
+	transition: 0.3s;
+}
+.dot.active {
+  background-color: #ffffff;
+  width: 25px;
+}
 	/* Сетка */
 	.main_container {
     grid-template-columns: 1fr;
@@ -436,11 +537,22 @@ margin-top: 5px;
     height: auto;
   }
 	/* Баннер */
-	.banner {
-		width: 355px;
-		height: 175px;
-	}
+	.slider_banner {
+    width: 90%;       /* или 100% */
+    max-width: 750px; /* чтобы не было растягивания */
+    margin: 0 auto;
+  }
 
+  .banner {
+    width: 100%;      /* полностью под контейнер */
+    height: 170px;     /* пропорции сохраняются */
+  }
+
+  .banner_content img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+  }
 	/* Скидочные блоки */
 	.sale {
 		flex-direction: column;
